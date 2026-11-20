@@ -5,7 +5,7 @@ Personal portfolio of **Satheeshkumar Raman**, Senior Quality Assurance Engineer
 Live site: https://codewithquality.com
 
 ## Stack
-Static HTML/CSS/JS built on the [iPortfolio](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/) template by BootstrapMade (Bootstrap 5). No build step.
+A single static `index.html` (HTML, CSS and a little JavaScript, IBM Plex fonts from Google Fonts). No framework, no build step.
 
 ## Local preview
 Open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.

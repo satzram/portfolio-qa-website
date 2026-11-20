@@ -1,363 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Satheesh - Portfolio</title>
-  <meta content="Satheeshkumar Raman – Senior Quality Assurance Engineer at Amazon with 10+ years in test automation, test strategy, and QA for retail and AI voice-assistant products." name="description">
-  <meta content="Satheeshkumar Raman, QA Engineer, Software Testing, Test Automation, Selenium, Appium, Cypress, Amazon" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <style>
-
-.rightsearch {
-  display: block;
-  margin: 0 0 10px auto;
-  width: 100%;
-  max-width: 320px;
-  border: 2px solid #151711;
-  padding: 8px 10px;
-}
-
-.inactivelink {
-   pointer-events: none;
-   cursor: default;
-}
-    .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        
-    }
-     
-    .flex-container div {
-        background-color: #f4f8f6;
-        margin: 10px;
-        padding: 10px;
-    }
-    </style>
-    <script>
-      function myFunction() {
-        // Declare variables
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById('myInput');
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        li = ul.getElementsByTagName('div');
-      
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-          } else {
-            li[i].style.display = "none";
-          }
-        }
-      }
-      </script>
-      
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satheeshkumar Raman · QA</title>
+<meta name="description" content="Satheeshkumar Raman – Senior Software QA Engineer with 13+ years in quality engineering, test automation and AI-assisted testing at Robinhood, TikTok and Amazon.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, precise engineer; confident, no hype
+   IDEA: the page behaves like a passing test run: his career is the suite
+   PICTURE: a runner console in the hero that executes the "career suite" line by line, ending all green
+   COLOUR and TYPE: white ground, graphite ink, console in charcoal, pass green only for passing marks, blue for links; IBM Plex Sans + Plex Mono (console only)
+   LAYOUT: hero = name + one-line role over a wide console; then experience as a test report table, skills as suites, contact */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#15181b);--ink:light-dark(#16191c,#e9ecef);--mute:light-dark(#5b636b,#9aa3ab);
+--line:light-dark(#e3e6e9,#2a2f34);--panel:light-dark(#f4f6f7,#1c2024);
+--con:#1b1f23;--conInk:#d6dde3;--pass:#2fbf71;--link:light-dark(#1f55d1,#7aa2ff)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "IBM Plex Sans",system-ui,sans-serif;overflow-x:clip}
+a{color:var(--link)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,18px)}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:22px;align-items:center;min-height:60px;flex-wrap:wrap}
+nav b{margin-right:auto;font-weight:600}
+nav .links{display:flex;gap:22px}
+nav a{color:var(--ink);text-decoration:none;font-size:15px}nav a:hover{color:var(--link)}
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(32px,5vw,64px)}
+.who{display:flex;gap:20px;align-items:center;margin-bottom:28px}
+.who img{flex:none;width:76px;height:76px;border-radius:50%;object-fit:cover}
+h1{font-size:clamp(36px,5.4vw,58px);line-height:1.04;margin:0;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+.role{color:var(--mute);margin:8px 0 0;font-size:18px}
+.console{background:var(--con);color:var(--conInk);border-radius:10px;padding:18px 22px 22px;font:14.5px/1.75 "IBM Plex Mono",monospace;box-shadow:0 18px 40px -24px #000}
+.console .bar{display:flex;gap:7px;margin-bottom:12px}.console .bar i{width:11px;height:11px;border-radius:50%;background:#3a4047}
+.console .cmd{color:#8fa1b3}
+.console p{margin:0;white-space:pre-wrap;opacity:0;transform:translateY(3px);transition:.25s}
+.console p.on{opacity:1;transform:none}
+.ok{color:var(--pass)}.dim{color:#7d8790}
+.sum{margin-top:10px!important;border-top:1px solid #2e353b;padding-top:10px}
+section{padding:clamp(36px,5vw,72px) 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,3vw,34px);line-height:1.1;margin:0 0 8px;letter-spacing:-.01em}
+.lede{color:var(--mute);max-width:66ch;margin:0 0 28px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,4vw,56px)}
+.facts{background:var(--panel);border-radius:10px;padding:20px 22px;margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:15.5px;align-self:start}
+.facts dt{color:var(--mute)}.facts dd{margin:0}
+.job{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:4px 14px;padding:22px 0;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+.job .mk{color:var(--pass);font:600 18px "IBM Plex Mono",monospace;line-height:1.5}
+.job h3{margin:0;font-size:19px}
+.job .when{color:var(--mute);font-size:15px;white-space:nowrap;text-align:right}
+.job ul{grid-column:2/4;margin:6px 0 0;padding-left:18px;color:var(--ink)}
+.job li{margin:3px 0;max-width:80ch}
+.suites{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px}
+.suite{border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.suite h3{margin:0 0 10px;font-size:17px;display:flex;justify-content:space-between;gap:8px}
+.suite h3 span{font:500 13px "IBM Plex Mono",monospace;color:var(--pass);white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{background:var(--panel);border-radius:6px;padding:3px 9px;font-size:14px}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.contact{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:focus-visible,nav a:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+footer{padding:28px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:560px){.console .dim{display:none}.console{font-size:13.5px;padding:14px 16px 18px}}
+@media(max-width:760px){.about{grid-template-columns:1fr}.job{grid-template-columns:22px minmax(0,1fr)}.job .when{grid-column:2;text-align:left}.job ul{grid-column:2}nav .links{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.console p{transition:none}}
+</style>
 </head>
-
 <body>
+<nav><div class="wrap"><b>Satheesh Raman</b><span class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a></span><a href="#contact">Contact</a></div></nav>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+<header class="hero"><div class="wrap">
+  <div class="who"><img src="assets/img/profile-img.jpg" alt="Satheeshkumar Raman">
+    <div><h1>Satheeshkumar Raman</h1><p class="role">Senior Software QA Engineer · Quality engineering, test automation, AI-assisted testing</p></div></div>
+  <div class="console" role="img" aria-label="A test run of his career: all 6 checks pass">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div id="run"></div>
+  </div>
+</div></header>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+<main>
+<section id="about"><div class="wrap about">
+  <div><h2>About</h2>
+  <p>Senior Software QA Engineer with 13+ years delivering high-quality software across consumer apps, fintech platforms, AI-powered products, cloud services and distributed systems.</p>
+  <p>I build automation frameworks, design end-to-end test strategy, run release validation and root cause analysis, and lead quality across Product, Engineering, Design and Program Management. Lately my focus is AI in testing: LLM-driven evaluation, and an AI testing lifecycle that keeps people in the loop where judgment matters most.</p></div>
+  <dl class="facts"><dt>Based in</dt><dd>Fremont, CA</dd><dt>Now</dt><dd>Robinhood</dd><dt>Experience</dt><dd>13+ years</dd><dt>Languages</dt><dd>English, Tamil, Hindi</dd></dl>
+</div></section>
 
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="Satheeshkumar Raman" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Satheesh</a></h1>
-      </div>
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2><p class="lede">Five teams, from enterprise apps to Alexa Conversations to fintech.</p>
+  <div id="jobs"></div>
+</div></section>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Education & Experience</span></a></li>
-          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Skill Set</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2><p class="lede">Grouped the way I'd organise a test suite.</p>
+  <div class="suites" id="suites"></div>
+</div></section>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Satheeshkumar Raman</h1>
-      <p>I'm a   <span class="typed" data-typed-items="QA Engineer, Tech Enthusiast"></span></p>
-    </div>
-  </section><!-- End Hero -->
+<section id="education"><div class="wrap">
+  <h2>Education</h2>
+  <div class="edu"><div><h3 style="margin:0">Master of Engineering, Computer Science</h3></div><div><h3 style="margin:0">Bachelor of Engineering, Electronics &amp; Communication</h3></div></div>
+</div></section>
 
-  <main id="main">
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2><p class="lede">Open to conversations about quality engineering and AI in testing.</p>
+  <div class="contact">
+    <a class="btn primary" href="mailto:satheesh@codewithquality.com">satheesh@codewithquality.com</a>
+    <a class="btn" href="mailto:satzram@gmail.com">satzram@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/satheeshkumar-raman-4424244a/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="yr">2026</span> Satheeshkumar Raman · codewithquality.com</div></footer>
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
+<script>
+{
+const jobs=[
+ ["Robinhood","Senior QA Engineer","Mar 2025 – Present",["Lead end-to-end quality engineering for customer-facing web, mobile and backend fintech platforms.","Design and maintain scalable automation frameworks for functional, integration, API and end-to-end validation.","Build LLM-based evaluation frameworks to assess AI-enabled workflows.","Building AITLC (AI Testing Lifecycle): AI across test generation, execution and automation, with deliberate human-in-the-loop checkpoints.","Partner with Engineering, Product, Design and TPM on test strategy, risk analysis, defect triage and release readiness."]],
+ ["TikTok","Senior QA Engineer","Aug 2023 – Mar 2025",["Led quality engineering for large-scale consumer apps in a fast release cycle.","Improved release quality through automation, regression optimisation and disciplined defect validation."]],
+ ["Amazon","Senior QA Engineer","Feb 2017 – Aug 2023",["Led quality engineering for Alexa Conversations / Dialog Management across voice, mobile and cloud services.","Tested AI/ML models for accuracy, robustness, fairness and performance.","Cut regression execution time by over 30% through automation improvements.","Mentored QA engineers on automation and quality engineering practice."]],
+ ["CaratLane","Senior Software Engineer","Jul 2015 – Jan 2017",["Led QA for a mobile platform redesign.","Cut regression execution time by over 80% with automation."]],
+ ["Photon Interactive","Software Engineer","Jun 2013 – Jun 2015",["Built Selenium automation frameworks with Ruby, BDD and Cucumber, plus reusable libraries for enterprise apps."]]];
+document.getElementById('jobs').innerHTML=jobs.map(([c,t,w,b])=>`<article class="job"><span class="mk" aria-hidden="true">✓</span><h3>${c} · ${t}</h3><span class="when">${w}</span><ul>${b.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('');
 
-        <div class="section-title">
-          <h2>About Me</h2>
-          <p>10+ years of software testing experience in the retail and AI-powered voice assistant domains, with experience in
-            coding, developing test methodologies, writing test plans, creating test cases, and debugging.
-            This includes 6 years of experience working in a complex, matrixed organization, providing technical leadership,
-            leading projects, and working with executive leaders on product vision and roadmap.</p>
-        </div>
+const suites=[
+ ["Quality engineering",["Test strategy","Test planning","Test case design","Functional","Regression","Integration","System","Exploratory","API testing","Release validation","Root cause analysis","Risk analysis","Defect management"]],
+ ["Automation",["Selenium","Playwright","Appium","Cypress","Python","Java","TestNG","REST API automation","BDD","Cucumber"]],
+ ["AI in testing",["Agentic AI","LLM evaluation","AI/ML model validation","Claude Code","Claude skills & agents"]],
+ ["Engineering",["Git","Jenkins","CI/CD","Agile","Jira","Quality metrics","Cross-functional collaboration"]]];
+document.getElementById('suites').innerHTML=suites.map(([n,t])=>`<div class="suite"><h3>${n}<span>${t.length} passing</span></h3><div class="tags">${t.map(x=>`<span>${x}</span>`).join('')}</div></div>`).join('');
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/seePurple.jpg" class="img-fluid" alt="Satheeshkumar Raman">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Senior Quality Assurance Engineer</h3>
-            <p class="fst-italic">
-              Amazon, WA, USA
-            </p>
-            <div class="row">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Current City:</strong> <span>Redmond, WA, USA</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Highest Degree:</strong> <span>Master of Engineering in Computer Science</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Additional Certification:</strong> <span>BEC Certified (Business English Certificate)</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Languages Known:</strong> <span>English, Tamil, Hindi</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Citizenship:</strong> <span>India</span></li>
-              </ul>
-              <div class="col-lg-6">
-                <ul>
-                  
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                
-              </div>
-            </div>
-            <p>
-              My hobbies are physical fitness, reading manga, and watching anime. I love sunny weather, sandy beaches, and green terrain. 
-            </p>
-            <p>
-             
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Education & Experience</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Senior Quality Assurance Engineer</h4>
-              <h5>2017 - Present</h5>
-              <p><em>Amazon, Redmond, WA, USA</em></p>
-              <ul>
-                <li>Defined a self-serve release process, reducing QA involvement and speeding up product delivery
-                  by 2 days</li>
-                <li>Created 150 test cases forming the regression test suite to ensure product test coverage</li>
-                <li>Improved the continuous deployment life cycle by putting in place mechanisms for a test-first mindset across the software
-                  development life cycle</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Senior Software Engineer</h4>
-              <h5>2015 - 2017</h5>
-              <p><em>CaratLane Pvt Ltd, Chennai, TN, India</em></p>
-              <ul>
-                <li>Reduced regression testing time during deployment by 80% by implementing automated API and UI tests</li>
-                <li>Established automated, scheduled production monitoring to ensure service availability for customers, serving
-                  as end-to-end system health reports for senior leaders</li>
-                <li>Led a team of 3 to launch a revamp of the entire product on mobile with less than 5% bug leakage, on
-                  schedule</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Software Engineer</h4>
-              <h5>2013 - 2015</h5>
-              <p><em>Photon Interactive Pvt Ltd, Chennai, TN, India</em></p>
-              <ul>
-                <li>Wrote test scripts that increased automation coverage of the regression test suite by 20%</li>
-                <li>Created test cases based on business requirements and mocks to build a requirements traceability matrix, ensuring
-                  100% test coverage.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Master of Engineering in CS</h4>
-              <h5>2012</h5>
-              <p><em>Velammal Engineering College, Chennai, TN, India</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>Bachelor of Engineering in ECE</h4>
-              <h5>2010</h5>
-              <p><em>Meenakshi College of Engineering, Chennai, TN, India</em></p>
-            </div>
-          </div>
-       
-
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-       <!-- ======= Facts Section ======= -->
-       <section id="skills" class="facts">
-        <div class="container">
-          <div class="section-title">
-            <h2>Skill Set</h2>
-            <p>I have hands-on experience with the tools, technologies, and engineering practices below</p>
-            <input type="text" id="myInput" class="rightsearch" onkeyup="myFunction()" placeholder="Search for tools/technology/skillset">
-          </div>
-  
-          
-
-          <div class="flex-container" id="myUL">
-              <div><a href="#" class="inactivelink">TestRail</a></div>
-              <div><a href="#" class="inactivelink">Jira</a></div>
-              <div><a href="#" class="inactivelink">Git</a></div>
-              <div><a href="#" class="inactivelink">Capybara</a></div>
-              <div><a href="#" class="inactivelink">Calabash</a></div>
-              <div><a href="#" class="inactivelink">Appium</a></div>
-              <div><a href="#" class="inactivelink">TestNG</a></div>
-              <div><a href="#" class="inactivelink">Cucumber</a></div>
-              <div><a href="#" class="inactivelink">Cypress</a></div>
-              <div><a href="#" class="inactivelink">Selenium</a></div>
-              <div><a href="#" class="inactivelink">Charles Proxy</a></div>
-              <div><a href="#" class="inactivelink">ModHeader</a></div>
-              <div><a href="#" class="inactivelink">Fiddler</a></div>
-              <div><a href="#" class="inactivelink">Ruby</a></div>
-              <div><a href="#" class="inactivelink">Java</a></div>
-              <div><a href="#" class="inactivelink">JavaScript</a></div>
-              <div><a href="#" class="inactivelink">Developing test methodologies</a></div>
-              <div><a href="#" class="inactivelink">Test plan preparation</a></div>
-              <div><a href="#" class="inactivelink">Test Case Enumeration</a></div>
-              <div><a href="#" class="inactivelink">Test data preparation</a></div>
-              <div><a href="#" class="inactivelink">Test Execution</a></div>
-              <div><a href="#" class="inactivelink">Manual Testing</a></div>
-              <div><a href="#" class="inactivelink">Facilitating review/triage meetings</a></div>
-              <div><a href="#" class="inactivelink">Release Planning</a></div>
-              <div><a href="#" class="inactivelink">Leading Projects</a></div>
-              <div><a href="#" class="inactivelink">Providing technical leadership/Mentorship</a></div>
-              <div><a href="#" class="inactivelink">Test Automation Framework Creation</a></div>
-              <div><a href="#" class="inactivelink">Scripting</a></div>
-              <div><a href="#" class="inactivelink">Create testing tools</a></div>
-              <div><a href="#" class="inactivelink">Web Application/browser Automation</a></div>
-              <div><a href="#" class="inactivelink">Mobile Apps Automation-iOS/Android</a></div>
-              <div><a href="#" class="inactivelink">Web Application/UI Testing</a></div>
-              <div><a href="#" class="inactivelink">Define QA Process</a></div>
-
-          </div>
-        </div>
-      </section><!-- End Facts Section -->
-
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p></p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p><a href="mailto:satheesh@codewithquality.com">satheesh@codewithquality.com</a></p>
-              </div>
-              <div class="Linkedin">
-                <i class="bx bxl-linkedin"></i>
-                <h4>LinkedIn:</h4>
-                <p><a href="https://www.linkedin.com/in/satheeshkumar-raman-4424244a/" target="_blank" rel="noopener">Satheeshkumar Raman</a></p>
-              </div>
-
-            
-            </div>
-
-          </div>
-
-          
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; <span id="year">2026</span> <strong><span>Satheeshkumar Raman</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+const lines=[
+ ['<span class="cmd">$ npx run career --suite satheesh</span>'],
+ ['<span class="ok">✓</span> Photon Interactive  <span class="dim">built Selenium + Cucumber frameworks</span>'],
+ ['<span class="ok">✓</span> CaratLane           <span class="dim">regression time −80%</span>'],
+ ['<span class="ok">✓</span> Amazon              <span class="dim">Alexa Conversations / Dialog Management</span>'],
+ ['<span class="ok">✓</span> TikTok              <span class="dim">large-scale consumer releases</span>'],
+ ['<span class="ok">✓</span> Robinhood           <span class="dim">fintech quality + LLM evaluation</span>'],
+ ['<span class="ok">✓</span> AITLC               <span class="dim">AI testing lifecycle, human in the loop</span>'],
+ ['<span class="ok">6 passed</span>, 0 failed  <span class="dim">· 13+ years</span>','sum']];
+const run=document.getElementById('run');
+run.innerHTML=lines.map(([h,c])=>`<p class="${c||''}">${h}</p>`).join('');
+const ps=[...run.children];
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ps.forEach((p,i)=>still?p.classList.add('on'):setTimeout(()=>p.classList.add('on'),250+i*330));
+document.getElementById('yr').textContent=new Date().getFullYear();
+}
+</script>
 </body>
-
-</html>
+</html>
