@@ -37,8 +37,8 @@ h1{font-size:clamp(36px,5.4vw,58px);line-height:1.04;margin:0;font-weight:700;le
 .console{background:var(--con);color:var(--conInk);border-radius:10px;padding:18px 22px 22px;font:14.5px/1.75 "IBM Plex Mono",monospace;box-shadow:0 18px 40px -24px #000}
 .console .bar{display:flex;gap:7px;margin-bottom:12px}.console .bar i{width:11px;height:11px;border-radius:50%;background:#3a4047}
 .console .cmd{color:#8fa1b3}
-.console p{margin:0;white-space:pre-wrap;opacity:0;transform:translateY(3px);transition:.25s}
-.console p.on{opacity:1;transform:none}
+.console p{margin:0;white-space:pre-wrap;transition:.25s}
+.js .console p:not(.on){opacity:0;transform:translateY(3px)}
 .ok{color:var(--pass)}.dim{color:#7d8790}
 .sum{margin-top:10px!important;border-top:1px solid #2e353b;padding-top:10px}
 section{padding:clamp(36px,5vw,72px) 0;border-top:1px solid var(--line)}
@@ -79,7 +79,16 @@ footer{padding:28px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid
     <div><h1>Satheeshkumar Raman</h1><p class="role">Senior Software QA Engineer · Quality engineering, test automation, AI-assisted testing</p></div></div>
   <div class="console" role="img" aria-label="A test run of his career: all 6 checks pass">
     <div class="bar"><i></i><i></i><i></i></div>
-    <div id="run"></div>
+    <div id="run">
+<p ><span class="cmd">$ npx run career --suite satheesh</span></p>
+<p ><span class="ok">✓</span> Photon Interactive  <span class="dim">built Selenium + Cucumber frameworks</span></p>
+<p ><span class="ok">✓</span> CaratLane           <span class="dim">regression time −80%</span></p>
+<p ><span class="ok">✓</span> Amazon              <span class="dim">Alexa Conversations / Dialog Management</span></p>
+<p ><span class="ok">✓</span> TikTok              <span class="dim">large-scale consumer releases</span></p>
+<p ><span class="ok">✓</span> Robinhood           <span class="dim">fintech quality + LLM evaluation</span></p>
+<p ><span class="ok">✓</span> AITLC               <span class="dim">AI testing lifecycle, human in the loop</span></p>
+<p class="sum"><span class="ok">6 passed</span>, 0 failed  <span class="dim">· 13+ years</span></p>
+</div>
   </div>
 </div></header>
 
@@ -93,12 +102,12 @@ footer{padding:28px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid
 
 <section id="experience"><div class="wrap">
   <h2>Experience</h2><p class="lede">Five teams, from enterprise apps to Alexa Conversations to fintech.</p>
-  <div id="jobs"></div>
+  <div id="jobs"><article class="job"><span class="mk" aria-hidden="true">✓</span><h3>Robinhood · Senior QA Engineer</h3><span class="when">Mar 2025 – Present</span><ul><li>Lead end-to-end quality engineering for customer-facing web, mobile and backend fintech platforms.</li><li>Design and maintain scalable automation frameworks for functional, integration, API and end-to-end validation.</li><li>Build LLM-based evaluation frameworks to assess AI-enabled workflows.</li><li>Building AITLC (AI Testing Lifecycle): AI across test generation, execution and automation, with deliberate human-in-the-loop checkpoints.</li><li>Partner with Engineering, Product, Design and TPM on test strategy, risk analysis, defect triage and release readiness.</li></ul></article><article class="job"><span class="mk" aria-hidden="true">✓</span><h3>TikTok · Senior QA Engineer</h3><span class="when">Aug 2023 – Mar 2025</span><ul><li>Led quality engineering for large-scale consumer apps in a fast release cycle.</li><li>Improved release quality through automation, regression optimisation and disciplined defect validation.</li></ul></article><article class="job"><span class="mk" aria-hidden="true">✓</span><h3>Amazon · Senior QA Engineer</h3><span class="when">Feb 2017 – Aug 2023</span><ul><li>Led quality engineering for Alexa Conversations / Dialog Management across voice, mobile and cloud services.</li><li>Tested AI/ML models for accuracy, robustness, fairness and performance.</li><li>Cut regression execution time by over 30% through automation improvements.</li><li>Mentored QA engineers on automation and quality engineering practice.</li></ul></article><article class="job"><span class="mk" aria-hidden="true">✓</span><h3>CaratLane · Senior Software Engineer</h3><span class="when">Jul 2015 – Jan 2017</span><ul><li>Led QA for a mobile platform redesign.</li><li>Cut regression execution time by over 80% with automation.</li></ul></article><article class="job"><span class="mk" aria-hidden="true">✓</span><h3>Photon Interactive · Software Engineer</h3><span class="when">Jun 2013 – Jun 2015</span><ul><li>Built Selenium automation frameworks with Ruby, BDD and Cucumber, plus reusable libraries for enterprise apps.</li></ul></article></div>
 </div></section>
 
 <section id="skills"><div class="wrap">
   <h2>Skills</h2><p class="lede">Grouped the way I'd organise a test suite.</p>
-  <div class="suites" id="suites"></div>
+  <div class="suites" id="suites"><div class="suite"><h3>Quality engineering<span>13 passing</span></h3><div class="tags"><span>Test strategy</span><span>Test planning</span><span>Test case design</span><span>Functional</span><span>Regression</span><span>Integration</span><span>System</span><span>Exploratory</span><span>API testing</span><span>Release validation</span><span>Root cause analysis</span><span>Risk analysis</span><span>Defect management</span></div></div><div class="suite"><h3>Automation<span>10 passing</span></h3><div class="tags"><span>Selenium</span><span>Playwright</span><span>Appium</span><span>Cypress</span><span>Python</span><span>Java</span><span>TestNG</span><span>REST API automation</span><span>BDD</span><span>Cucumber</span></div></div><div class="suite"><h3>AI in testing<span>5 passing</span></h3><div class="tags"><span>Agentic AI</span><span>LLM evaluation</span><span>AI/ML model validation</span><span>Claude Code</span><span>Claude skills &amp; agents</span></div></div><div class="suite"><h3>Engineering<span>7 passing</span></h3><div class="tags"><span>Git</span><span>Jenkins</span><span>CI/CD</span><span>Agile</span><span>Jira</span><span>Quality metrics</span><span>Cross-functional collaboration</span></div></div></div>
 </div></section>
 
 <section id="education"><div class="wrap">
@@ -119,34 +128,9 @@ footer{padding:28px 0 40px;color:var(--mute);font-size:14px;border-top:1px solid
 
 <script>
 {
-const jobs=[
- ["Robinhood","Senior QA Engineer","Mar 2025 – Present",["Lead end-to-end quality engineering for customer-facing web, mobile and backend fintech platforms.","Design and maintain scalable automation frameworks for functional, integration, API and end-to-end validation.","Build LLM-based evaluation frameworks to assess AI-enabled workflows.","Building AITLC (AI Testing Lifecycle): AI across test generation, execution and automation, with deliberate human-in-the-loop checkpoints.","Partner with Engineering, Product, Design and TPM on test strategy, risk analysis, defect triage and release readiness."]],
- ["TikTok","Senior QA Engineer","Aug 2023 – Mar 2025",["Led quality engineering for large-scale consumer apps in a fast release cycle.","Improved release quality through automation, regression optimisation and disciplined defect validation."]],
- ["Amazon","Senior QA Engineer","Feb 2017 – Aug 2023",["Led quality engineering for Alexa Conversations / Dialog Management across voice, mobile and cloud services.","Tested AI/ML models for accuracy, robustness, fairness and performance.","Cut regression execution time by over 30% through automation improvements.","Mentored QA engineers on automation and quality engineering practice."]],
- ["CaratLane","Senior Software Engineer","Jul 2015 – Jan 2017",["Led QA for a mobile platform redesign.","Cut regression execution time by over 80% with automation."]],
- ["Photon Interactive","Software Engineer","Jun 2013 – Jun 2015",["Built Selenium automation frameworks with Ruby, BDD and Cucumber, plus reusable libraries for enterprise apps."]]];
-document.getElementById('jobs').innerHTML=jobs.map(([c,t,w,b])=>`<article class="job"><span class="mk" aria-hidden="true">✓</span><h3>${c} · ${t}</h3><span class="when">${w}</span><ul>${b.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('');
-
-const suites=[
- ["Quality engineering",["Test strategy","Test planning","Test case design","Functional","Regression","Integration","System","Exploratory","API testing","Release validation","Root cause analysis","Risk analysis","Defect management"]],
- ["Automation",["Selenium","Playwright","Appium","Cypress","Python","Java","TestNG","REST API automation","BDD","Cucumber"]],
- ["AI in testing",["Agentic AI","LLM evaluation","AI/ML model validation","Claude Code","Claude skills & agents"]],
- ["Engineering",["Git","Jenkins","CI/CD","Agile","Jira","Quality metrics","Cross-functional collaboration"]]];
-document.getElementById('suites').innerHTML=suites.map(([n,t])=>`<div class="suite"><h3>${n}<span>${t.length} passing</span></h3><div class="tags">${t.map(x=>`<span>${x}</span>`).join('')}</div></div>`).join('');
-
-const lines=[
- ['<span class="cmd">$ npx run career --suite satheesh</span>'],
- ['<span class="ok">✓</span> Photon Interactive  <span class="dim">built Selenium + Cucumber frameworks</span>'],
- ['<span class="ok">✓</span> CaratLane           <span class="dim">regression time −80%</span>'],
- ['<span class="ok">✓</span> Amazon              <span class="dim">Alexa Conversations / Dialog Management</span>'],
- ['<span class="ok">✓</span> TikTok              <span class="dim">large-scale consumer releases</span>'],
- ['<span class="ok">✓</span> Robinhood           <span class="dim">fintech quality + LLM evaluation</span>'],
- ['<span class="ok">✓</span> AITLC               <span class="dim">AI testing lifecycle, human in the loop</span>'],
- ['<span class="ok">6 passed</span>, 0 failed  <span class="dim">· 13+ years</span>','sum']];
-const run=document.getElementById('run');
-run.innerHTML=lines.map(([h,c])=>`<p class="${c||''}">${h}</p>`).join('');
-const ps=[...run.children];
+const ps=[...document.querySelectorAll('#run p')];
 const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.add('js');
 ps.forEach((p,i)=>still?p.classList.add('on'):setTimeout(()=>p.classList.add('on'),250+i*330));
 document.getElementById('yr').textContent=new Date().getFullYear();
 }
