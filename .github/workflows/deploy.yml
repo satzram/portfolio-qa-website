@@ -1,0 +1,33 @@
+name: Deploy to HostGator
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hostgator
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HG_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p "${{ secrets.HG_PORT }}" -H "${{ secrets.HG_HOST }}" >> ~/.ssh/known_hosts
+
+      # Sync site files to public_html. --delete removes files deleted from the repo,
+      # but the excludes protect cPanel/server files that live in public_html.
+      - name: Deploy with rsync
+        run: |
+          rsync -avz --delete \
+            --exclude '.git*' --exclude '.github' --exclude 'README.md' \
+            --exclude '.well-known' --exclude 'cgi-bin' --exclude '.htaccess' \
+            -e "ssh -p ${{ secrets.HG_PORT }}" \
+            ./ "${{ secrets.HG_USER }}@${{ secrets.HG_HOST }}:public_html/"
