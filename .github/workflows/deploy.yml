@@ -16,18 +16,50 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up SSH key
+        env:
+          SSH_KEY: ${{ secrets.HG_SSH_KEY }}
+          SSH_PASSPHRASE: ${{ secrets.HG_SSH_PASSPHRASE }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.HG_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p "${{ secrets.HG_PORT }}" -H "${{ secrets.HG_HOST }}" >> ~/.ssh/known_hosts
+          # Normalise line endings in case the key was pasted with CRLF
+          printf '%s\n' "$SSH_KEY" | tr -d '\r' > ~/.ssh/hg_key
+          chmod 600 ~/.ssh/hg_key
+          ssh-keyscan -p "${{ secrets.HG_PORT }}" -H "${{ secrets.HG_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
 
-      # Sync site files to public_html. --delete removes files deleted from the repo,
-      # but the excludes protect cPanel/server files that live in public_html.
+          # Check the key is a readable private key (prints nothing secret)
+          if ! grep -q 'PRIVATE KEY-----' ~/.ssh/hg_key; then
+            echo "::error::HG_SSH_KEY is not a private key. Paste the PRIVATE key (BEGIN ... PRIVATE KEY), not the public key."; exit 1
+          fi
+
+          # If the key has a password, remove it locally using HG_SSH_PASSPHRASE
+          if ! ssh-keygen -y -P "" -f ~/.ssh/hg_key >/dev/null 2>&1; then
+            if [ -z "$SSH_PASSPHRASE" ]; then
+              echo "::error::The SSH key is password-protected. Add its password as the secret HG_SSH_PASSPHRASE."; exit 1
+            fi
+            ssh-keygen -p -P "$SSH_PASSPHRASE" -N "" -f ~/.ssh/hg_key >/dev/null || {
+              echo "::error::HG_SSH_PASSPHRASE does not unlock the key."; exit 1; }
+          fi
+
+          cat > ~/.ssh/config <<EOF
+          Host hg
+            HostName ${{ secrets.HG_HOST }}
+            Port ${{ secrets.HG_PORT }}
+            User ${{ secrets.HG_USER }}
+            IdentityFile ~/.ssh/hg_key
+            IdentitiesOnly yes
+            BatchMode yes
+          EOF
+
+      - name: Test SSH login
+        run: |
+          ssh hg 'echo "Logged in to $(hostname) as $(whoami)"' || {
+            echo "::error::Server refused the key. In cPanel > SSH Access > Manage SSH Keys, make sure this key is listed under Public Keys with status 'authorized'."; exit 1; }
+
+      # Copy site files to public_html. Files already on the server that aren't in
+      # the repo are left alone (no --delete), so nothing else in public_html is removed.
       - name: Deploy with rsync
         run: |
-          rsync -avz --delete \
+          rsync -avz \
             --exclude '.git*' --exclude '.github' --exclude 'README.md' \
             --exclude '.well-known' --exclude 'cgi-bin' --exclude '.htaccess' \
-            -e "ssh -p ${{ secrets.HG_PORT }}" \
-            ./ "${{ secrets.HG_USER }}@${{ secrets.HG_HOST }}:public_html/"
+            -e ssh ./ hg:public_html/
